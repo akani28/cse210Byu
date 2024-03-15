@@ -22,30 +22,86 @@ class Program
         Console.WriteLine("what is your grade percentage? ");
         float grade = float.Parse(Console.ReadLine());
 
-        if(grade>=90)
+        if (grade >= 90)
         {
-            Console.WriteLine($"your grade is {letterA}");
-            Console.WriteLine("Congratulations....pass the class");
+            if (int.Parse(grade.ToString().Substring(1)) >= 7)
+            {
+                Console.WriteLine($"your grade is {letterA}");
+                Console.WriteLine("Congratulations....pass the class");
+            }
+            else if (int.Parse(grade.ToString().Substring(1)) < 3)
+            {
+                Console.WriteLine($"your grade is -{letterA}");
+                Console.WriteLine("Congratulations....pass the class");
+            }
+
+
         }
-        else if(grade>=80)
+        else if (grade >= 80)
         {
-            Console.WriteLine($"your grade is {letterB}");
-            Console.WriteLine("Congratulations....pass the class");
+            if (int.Parse(grade.ToString().Substring(1)) >= 7)
+            {
+                Console.WriteLine($"your grade is +{letterB}");
+                Console.WriteLine("Congratulations....pass the class");
+            }
+            else if (int.Parse(grade.ToString().Substring(1)) < 3)
+            {
+                Console.WriteLine($"your grade is -{letterB}");
+                Console.WriteLine("Congratulations....pass the class");
+            }
+            else
+            {
+                Console.WriteLine($"your grade is {letterB}");
+                Console.WriteLine("Congratulations....pass the class");
+
+            }
+
         }
-         else if(grade>=70)
+        else if (grade >= 70)
         {
-            Console.WriteLine($"your grade is {letterC}");
-            Console.WriteLine("Congratulations....pass the class");
+            if (int.Parse(grade.ToString().Substring(1)) >= 7)
+            {
+                Console.WriteLine($"your grade is +{letterC}");
+                Console.WriteLine("Congratulations....pass the class");
+            }
+            else if (int.Parse(grade.ToString().Substring(1)) < 3)
+            {
+                Console.WriteLine($"your grade is -{letterC}");
+                Console.WriteLine("Congratulations....pass the class");
+            }
+            else
+            {
+                Console.WriteLine($"your grade is {letterC}");
+                Console.WriteLine("Congratulations....pass the class");
+
+            }
+
         }
-         else if(grade>=60)
+        else if (grade >= 60)
         {
-            Console.WriteLine($"your grade is {letterD}");
-            Console.WriteLine("sorry....not pass the class, next time you will make it, don't give up");
-        }else
+            if (int.Parse(grade.ToString().Substring(1)) >= 7)
+            {
+                Console.WriteLine($"your grade is +{letterD}");
+                Console.WriteLine("sorry....not pass the class, next time you will make it, don't give up");
+            }
+            else if (int.Parse(grade.ToString().Substring(1)) < 3)
+            {
+                Console.WriteLine($"your grade is -{letterD}");
+                Console.WriteLine("sorry....not pass the class, next time you will make it, don't give up");
+            }
+            else
+            {
+                Console.WriteLine($"your grade is {letterD}");
+                Console.WriteLine("sorry....not pass the class, next time you will make it, don't give up");
+
+            }
+
+        }
+        else
         {
             Console.WriteLine($"your grade is {letterF}");
             Console.WriteLine("sorry....not pass the class, next time you will make it, don't give up");
-            
+
 
         }
 
