@@ -7,6 +7,7 @@ class Program
         int flag = 1;
         PromptGenerator promp;
         Entry entry = new Entry();
+        Journal journal;
         Console.WriteLine("Welcome to the journal program!");
         while (flag != 5)
         {
@@ -30,6 +31,25 @@ class Program
             else if (flag == 2)
             {
                 entry.DisplayEntry();
+            }
+            else if (flag == 4)
+            {
+                Console.WriteLine("What is the filename? ");
+                string nameFile = Console.ReadLine();
+                journal = new Journal(nameFile);  
+                foreach (string userEntry in entry.entries)
+                {
+                    
+                    journal.file(nameFile, userEntry);
+                }
+            }
+            else if(flag==3)
+            {
+                Console.WriteLine("What is the filename? ");
+                string nameFile = Console.ReadLine();
+                journal = new Journal(nameFile); 
+                journal.readFile(nameFile);
+
             }
 
         }

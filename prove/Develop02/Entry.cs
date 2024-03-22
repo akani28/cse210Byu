@@ -3,7 +3,7 @@ class Entry
     DateTime theCurrentTime;
     string dateText;
     
-    List<string> entries;
+    public List<string> entries;
     public Entry()
     {
         theCurrentTime = DateTime.Now;
