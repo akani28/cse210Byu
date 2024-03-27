@@ -20,7 +20,7 @@ class Scripture
     }
     public void replaceWord()
     {
-        numberRandom = random.Next(0, word.getWord().Split().Length + 1);//el numero aleatorio no se genera en ocasiones.lo que causa el error
+        numberRandom = random.Next(word.getWord().Split().Length);//el numero aleatorio no se genera en ocasiones.lo que causa el error
         string[] words = word.getWord().Split(" ");
         Console.WriteLine($"{numberRandom}");
         foreach (string word in words)
@@ -30,6 +30,7 @@ class Scripture
         string randomWord = words[numberRandom];
         if (randomWord.Contains("_"))
         {
+            //se debe generar otro numero aleatorio y verificar que este no se repita
 
         }
         else
