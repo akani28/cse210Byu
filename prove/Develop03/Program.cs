@@ -13,7 +13,7 @@ class Program
         while(dataUser!="quit"){
             Console.WriteLine("Press enter to continue or type 'quit' to finish: ");
             dataUser = Console.ReadLine();
-            //Console.Clear();
+            Console.Clear();
             scripture.replaceWord();
            
 
