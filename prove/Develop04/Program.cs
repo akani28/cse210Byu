@@ -15,17 +15,29 @@ class Program
             Console.WriteLine("  4. Quit");
             Console.Write("Select a choice from the menu: ");
             inputUser = Console.ReadLine();
-
-            if(inputUser=="1")
+            Console.Clear();
+            if (inputUser == "1")
             {
                 Breathing breathing = new Breathing();
                 breathing.WelcomeMessages("Breathing");
-                breathing.Description();
+                breathing.DescriptionActivity(breathing.GetDescription());
                 breathing.DurationActivity();
                 breathing.StartActivity();
+                breathing.PauseAnimation();
+                breathing.MessagesBreathing();
+                breathing.PauseAnimation();
+                breathing.EndActivity();
+                breathing.PauseAnimation();
+                Console.Clear();
+            }
+            else if(inputUser=="2")
+            {
+                Reflection reflection = new Reflection();
+                reflection.WelcomeMessages("Reflecting");
+                reflection.DescriptionActivity(reflection.GetDescription());
             }
 
-        }while(inputUser!="4");
+        } while (inputUser != "4");
 
 
     }

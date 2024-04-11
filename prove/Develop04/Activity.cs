@@ -1,62 +1,67 @@
 class Activity
 {
-    //private string _initialMessage;
+
     protected int _duration;
-    //private string _description;
+    protected DateTime startTime = DateTime.Now;
+    protected DateTime futureTime;
 
-    private string _messages;
-    private int _pause;
-
-    private string _endMessage;
     public Activity()
     {
-
-    }
-
-    public Activity(string messages,int pause, string endMessage)
-    {
-        //_initialMessage=initialMessage;
-        //_duration=duration;
-        //_description=description;
-        _messages=messages;
-        _pause=pause;
-        _endMessage=endMessage;
 
     }
     public int GetDuration()
     {
         return _duration;
     }
+    public void SetDuration(int num)
+    {
+        _duration = num;
+
+    }
     public void WelcomeMessages(string nameActivity)
     {
-        Console.WriteLine($"Welcome to the {nameActivity}.");
+        Console.WriteLine($"Welcome to the {nameActivity} Activity.");
+        Console.WriteLine("\n");
     }
-    
+
+    public void DescriptionActivity(String description)
+    {
+        Console.WriteLine(description);
+    }
+
     public void DurationActivity()
     {
         Console.Write("How long, in seconds, would you like for your session? ");
-        _duration= int.Parse(Console.ReadLine());
+        _duration = int.Parse(Console.ReadLine());
+
     }
     public void StartActivity()
     {
         Console.Clear();
-        Console.Write("Get Ready");
-        for(int i=0; i<5; i++)
+        Console.Write("Get Ready...");
+        Console.WriteLine($"{Environment.NewLine}");
+        futureTime = startTime.AddSeconds(_duration);
+
+    }
+    public void PauseAnimation()
+    {
+        string character = "|/-\\|/-\\|";
+        foreach (char bar in character)
         {
-            Console.Write(".");
-            Thread.Sleep(2000);
+            Console.Write(bar);
+            Thread.Sleep(500);
+            Console.Write("\b \b");
 
         }
-        Console.WriteLine($"{Environment.NewLine}");
 
     }
 
-    public void Countdown(int duration)
-    {
 
-    }
     public void EndActivity()
     {
+        Console.WriteLine("\n");
+        Console.WriteLine($"Well done!!{Environment.NewLine}");
+        Console.WriteLine($"You have completed another {_duration} seconds of the Breathing Activity.");
 
     }
 }
