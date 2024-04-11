@@ -44,7 +44,7 @@ class GoalManager
         int number = 1;
         foreach (Goals goals in listGoals)
         {
-            Console.WriteLine(goals.GetDetailsString());
+            
             Console.WriteLine($"{number}. {goals.GetDetailsString()}");
             number++;
         }
