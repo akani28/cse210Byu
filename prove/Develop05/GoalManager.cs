@@ -30,7 +30,8 @@ class GoalManager
             {
 
                 CreateGoal();
-            }else if(inputUser=="2")
+            }
+            else if (inputUser == "2")
             {
                 ListGoalName();
             }
@@ -40,9 +41,12 @@ class GoalManager
 
     public void ListGoalName()
     {
+        int number = 1;
         foreach (Goals goals in listGoals)
         {
             Console.WriteLine(goals.GetDetailsString());
+            Console.WriteLine($"{number}. {goals.GetDetailsString()}");
+            number++;
         }
     }
 
@@ -66,6 +70,16 @@ class GoalManager
             SimpleGoal simple = new SimpleGoal(name, description, amount);
             listGoals.Add(simple);
 
+        }
+        else if (type == "2")
+        {
+            EternalGoal eternal = new EternalGoal(name, description, amount);
+            listGoals.Add(eternal);
+        }
+        else if (type == "3")
+        {
+            Console.Write("How many times does this goal need to be accomplished for a bonus? ");
+            Console.ReadLine();
         }
 
 

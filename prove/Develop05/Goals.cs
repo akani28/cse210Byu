@@ -18,45 +18,28 @@ class Goals
         return true;
     }
 
-    public string GetDetailsString()
+    public virtual string GetDetailsString()
     {
         string goal =$"[ ] {_name} ({_description})";
         return goal;
     }
 
-    public string GetStringRepresentation()
+    public virtual string GetStringRepresentation()
     {
         string goal = _name + _description;
         return goal;
     }
 
-    public void ChoiceGoals()
+    
+
+    public string GetName()
     {
-        Console.WriteLine("The types of Goals are:");
-        Console.WriteLine("  1. Simple Goal");
-        Console.WriteLine("  2. Eternal Goal");
-        Console.WriteLine("  3. Checklist Goal ");
-        Console.Write("Wich type of goal would you like to create? ");
+       return _name;
 
-
-        // if (type == "1")
-        // {
-
-        //     GoalName();
-        //     GoalDescription();
-        //     GoalAmount();
-        //     //string goal = name + description;
-        //     //SimpleGoal simple = new SimpleGoal(goal);
-
-
-        // }
     }
-
-    public void GoalName()
+    public string GetDescription()
     {
-        Console.Write("What is the name of your goal? ");
-        //name = Console.ReadLine();
-        //Console.WriteLine(name);
+       return _description;
 
     }
     public void GoalDescription()
@@ -74,20 +57,5 @@ class Goals
 
     }
 
-    // public void SetName(string nameGoal)
-    // {
-    //     name = nameGoal;
-    // }
-    // public string GetName()
-    // {
-    //     return name;
-    // }
-    // public void SetDescription(string descriptionGoal)
-    // {
-    //     description = descriptionGoal;
-    // }
-    // public string GetDescription()
-    // {
-    //     return description;
-    // }
+    
 }
