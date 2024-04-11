@@ -79,7 +79,9 @@ class GoalManager
         else if (type == "3")
         {
             Console.Write("How many times does this goal need to be accomplished for a bonus? ");
-            Console.ReadLine();
+            int target = int.Parse(Console.ReadLine());
+            Checklist checkGoal = new Checklist(name, description, amount, 0, target);
+            listGoals.Add(checkGoal);
         }
 
 

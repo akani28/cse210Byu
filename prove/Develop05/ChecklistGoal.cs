@@ -9,6 +9,6 @@ class Checklist:Goals
     }
     public override string GetDetailsString()
     {
-        return $"[ ] {base.GetName()} ({base.GetDescription()}) -- Currently completed: {bonus}/{target}";
+        return $"[ ] {base.GetName()} ({base.GetDescription()}) -- Currently completed: {bonus=0}/{target}";
     }
 }
