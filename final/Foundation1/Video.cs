@@ -15,7 +15,7 @@ class Video
 
     public string DisplayInfoVideo()
     {
-        return $" {_title} author: {_author} duration: {_duration}s.";
+        return $" {_title} author: {_author} duration: {_duration}s.{Environment.NewLine}";
     }
 
     public void addComment()
@@ -34,5 +34,14 @@ class Video
 
         }
 
+    }
+    public void ShowComments()
+    {
+        Console.Write($"video: { _title}");
+        foreach (Comment comment in commentList)
+        {
+            comment.DisplayComment();
+            
+        }
     }
 }
