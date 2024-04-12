@@ -13,4 +13,9 @@ class Comment
     {
         return comments.Count;
     }
+
+    public string DisplayComment()
+    {
+        return $"{_name} {Environment.NewLine} {_text}.";
+    }
 }

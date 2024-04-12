@@ -11,10 +11,11 @@ class Program
             Console.WriteLine("Hello welcome to video Track");
             Console.WriteLine($"{Environment.NewLine}");
             Console.WriteLine("Menu Options:");
-            Console.WriteLine("1. Create Video");
-            Console.WriteLine("2. Show list videos");
-            Console.WriteLine("3. Show comments the video");
-            Console.WriteLine("4. Quit");
+            Console.WriteLine("  1. Create Video");
+            Console.WriteLine("  2. Show list videos");
+            Console.WriteLine("  3. Comment video");
+            Console.WriteLine("  4. Show comments the video");
+            Console.WriteLine("  5. Quit");
             inputUser = Console.ReadLine();
 
             if (inputUser == "1")
@@ -31,14 +32,19 @@ class Program
             }
             else if (inputUser == "2")
             {
-                int count = 0;
+                int count = 1;
                 Console.WriteLine("List videos: ");
                 Console.WriteLine($"{Environment.NewLine}");
                 foreach (Video video in videoList)
                 {
                     Console.Write($"{count}. {video.DisplayInfoVideo()}");
+                    count++;
                 }
-                count++;
+                
+            }
+            else if(inputUser == "3")
+            {
+
             }
         }
 
