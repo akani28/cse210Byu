@@ -12,4 +12,9 @@ class Video
 
         
     }
+
+    public string DisplayInfoVideo()
+    {
+        return $" {_title} author: {_author} duration: {_duration}s.";
+    }
 }
