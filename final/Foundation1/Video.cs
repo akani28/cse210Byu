@@ -9,5 +9,7 @@ class Video
         _title = title;
         _author = author;
         _duration = duration;
+
+        
     }
 }
