@@ -4,11 +4,15 @@ class Program
 {
     static void Main(string[] args)
     {
+        Product keyboard = new Product("Mechanic logitech", "001", 60.00f);
+        Product mouse = new Product("mouse logitech", "002", 20.00f);
+        Product laptop = new Product("Asus vivobook", "003", 1500.00f);
+        Console.WriteLine("Hello, welcome, we are Akani Dragons company.");
+        Console.WriteLine($"{Environment.NewLine}");
         string input = "";
         while (input != "4")
         {
-            Console.WriteLine("Hello, welcome, we are Akani Dragons company.");
-            Console.WriteLine($"{Environment.NewLine}");
+
             Console.WriteLine("Avalible products:");
             Console.WriteLine("  1. keyboard");
             Console.WriteLine("  2. Mouse");
@@ -16,12 +20,13 @@ class Program
             Console.WriteLine("  4.Quit");
             Console.Write("What product do you want to carry? ");
             input = Console.ReadLine();
-            if(input == "1")
+            if (input == "1")
             {
-                Product keyboard = new Product("Mechanic logitech", "001", 60.00f);
+                keyboard.DetailsProduct();
                 Console.Write($"How many {keyboard.GetName()} do you want to carry? ");
                 input = Console.ReadLine();
                 keyboard.SetAmount(int.Parse(input));
+                keyboard.TotalCost();
 
             }
 
