@@ -21,7 +21,7 @@ class Product
 
     public void DetailsProduct()
     {
-        Console.WriteLine($"{_name} Id: {001} Price: {_price}$");
+        Console.WriteLine($"producto: {_name} Id: {_id} Price: {_price} $");
     }
 
     public int GetAmount()
