@@ -59,13 +59,15 @@ class Program
             //customer.SetName(nameCustomer);
             //customer.SetAddress();
 
-            if(input == "4")
+            else if (input == "4")
             {
                 Console.WriteLine("Help me with the following information for the order: ");
-            Console.Write("you name is: ");
-            string nameCustomer = Console.ReadLine();
-            customer.SetName(nameCustomer);
-            customer.SetAddress();
+                Console.Write("you name is: ");
+                string nameCustomer = Console.ReadLine();
+                customer.SetName(nameCustomer);
+                customer.SetAddress();
+                Console.Clear();
+                Console.WriteLine("----------Shipping label--------");
                 Console.WriteLine($"name: {customer.GetName()}");
                 Console.WriteLine($"address: {customer.GetAddress().ShowAddress()}");
                 float cost = 0;
@@ -73,11 +75,21 @@ class Program
                 {
                     product.DetailsProduct();
                     cost = cost + product.TotalCost();
-                    
+
                 }
-                Console.WriteLine($"you must pay: {cost}$");
+                if (customer.GetAddress().LocationUE())
+                {
+                    Console.WriteLine($"Shipping Cost: 5.00$");
+                    Console.WriteLine($"you must pay: {cost+5.00f}$");
+                }else
+                {
+                    Console.WriteLine($"Shipping Cost: 35.00$");
+                    Console.WriteLine($"you must pay: {cost+35.00f}$");
+
+                }
+                input = "5";
             }
-            
+
 
         }
 
