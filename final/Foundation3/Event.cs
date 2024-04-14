@@ -14,11 +14,21 @@ class Event
 
     public void StandartDetails()
     {
-        
+
         Console.Write($"{title}");
         Console.Write($"{description}");
         Console.Write($"{date.Date}");
         Console.Write($"{date.Hour}");
         Console.Write($"{address}");
     }
+
+    public string GetTitle()
+    {
+        return this.title;
+    }
+    public void SetTitle(string title)
+    {
+        this.title = title;
+    }
+
 }
